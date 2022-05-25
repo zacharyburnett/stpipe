@@ -96,8 +96,8 @@ jobs:
         with:
           path: ${{ env.pythonLocation }}
           key: test-jwst-coverage-${{ runner.os }}-${{ env.pythonLocation }}-${{ hashFiles('pyproject.toml', 'setup.*') }}
-      - run: pip install ".[test]" pytest-xdist pytest-cov "jwst[test]@git+https://github.com/spacetelescope/jwst"
-      - run: pytest -n auto --cov-report=xml --cov=./src/stpipe --ignore-glob=timeconversion --ignore-glob=associations --pyargs jwst
+      - run: pip install ".[test]" pytest-xdist pytest-cov "jwst[test]"
+      - run: pytest -n auto --cov-report=xml --cov=src/stpipe --ignore-glob=timeconversion --ignore-glob=associations --pyargs jwst
       - run: coverage report
       - uses: codecov/codecov-action@v2
         with:
@@ -116,8 +116,8 @@ jobs:
         with:
           path: ${{ env.pythonLocation }}
           key: test-roman-coverage-${{ runner.os }}-${{ env.pythonLocation }}-${{ hashFiles('pyproject.toml', 'setup.*') }}
-      - run: pip install ".[test]" pytest-xdist pytest-cov "romancal[test]@git+https://github.com/spacetelescope/romancal"
-      - run: pytest --cov-report=xml --cov=./src/stpipe --pyargs romancal
+      - run: pip install ".[test]" pytest-xdist pytest-cov "romancal[test]"
+      - run: pytest --cov-report=xml --cov=src/stpipe --pyargs romancal
       - run: coverage report
       - uses: codecov/codecov-action@v2
         with:

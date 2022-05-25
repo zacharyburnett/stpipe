@@ -117,7 +117,7 @@ jobs:
           path: ${{ env.pythonLocation }}
           key: test-roman-coverage-${{ runner.os }}-${{ env.pythonLocation }}-${{ hashFiles('pyproject.toml', 'setup.*') }}
       - run: pip install ".[test]" pytest-xdist pytest-cov "romancal[test]"
-      - run: pytest --cov-report=xml --cov=src/stpipe --pyargs romancal
+      - run: pytest -n auto --cov-report=xml --cov=src/stpipe --pyargs romancal
       - run: coverage report
       - uses: codecov/codecov-action@v2
         with:

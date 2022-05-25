@@ -40,7 +40,7 @@ jobs:
           path: ${{ env.pythonLocation }}
           key: style-${{ runner.os }}-${{ env.pythonLocation }}-${{ hashFiles('pyproject.toml', 'setup.*') }}
       - run: pip install flake8
-      - run: flake8 --count
+      - run: flake8 --count src
   test:
     needs: [ security_audit, style ]
     name: test

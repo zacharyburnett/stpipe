@@ -1,10 +1,20 @@
 0.3.4 (unreleased)
 ==================
 
-- Update astropy min version to 5.0.4. [#52]
+Bug Fixes
+---------
 
 - Update datamodel with 'SKIPPED' status when step.skip set to True [#53]
 
+Changes to API
+--------------
+
+-
+
+Other
+-----
+
+- Update astropy min version to 5.0.4. [#52]
 - Update CI workflows to cache test environments and depend upon style and security checks [#55]
 
 0.3.3 (2022-04-07)
